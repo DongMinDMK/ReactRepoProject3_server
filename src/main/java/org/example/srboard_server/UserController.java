@@ -1,0 +1,19 @@
+package org.example.srboard_server;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+
+@RestController
+public class UserController {
+
+    @GetMapping("/getWord")
+    public HashMap<String, Object> getWordMethod(){
+        HashMap<String, Object> hm = new HashMap<>();
+
+        hm.put("word", "Hello World!!");
+
+        return hm;
+    }
+}
