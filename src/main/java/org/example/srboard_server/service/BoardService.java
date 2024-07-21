@@ -54,4 +54,12 @@ public class BoardService {
     public void plusReadcount(int num) {
         boardDAO.plusReadcount(num);
     }
+
+    public void updateBoard(Board board) {
+        boardDAO.updateBoard(board);
+    }
+
+    public void deleteBoard(int num) {
+        boardDAO.deleteBoard(num);
+    }
 }

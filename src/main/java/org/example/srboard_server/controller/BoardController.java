@@ -130,5 +130,29 @@ public class BoardController {
         return hm;
     }
 
+    @PostMapping("/updateBoard")
+    public HashMap<String,Object> updateBoard(@RequestBody Board board){
+        HashMap<String, Object> hm = new HashMap<>();
+
+        boardService.updateBoard(board);
+
+        hm.put("message", "OK");
+
+
+        return hm;
+    }
+
+    @DeleteMapping("/deleteBoard/{num}")
+    public HashMap<String, Object> deleteBoard(@PathVariable("num") int num){
+        HashMap<String, Object> hm = new HashMap<>();
+
+        boardService.deleteBoard(num);
+
+        hm.put("message", "OK");
+
+
+        return hm;
+    }
+
 
 }

@@ -64,4 +64,17 @@ public class BoardDAO {
         Board board = em.find(Board.class, num);
         board.setReadcount(board.getReadcount()+1);
     }
+
+    public void updateBoard(Board board) {
+        Board board1 = em.find(Board.class, board.getNum());
+        board1.setTitle(board.getTitle());
+        board1.setContent(board.getContent());
+        board1.setImage(board.getImage());
+        board1.setSavefilename(board.getSavefilename());
+    }
+
+    public void deleteBoard(int num) {
+        Board board1 = em.find(Board.class, num);
+        em.remove(board1);
+    }
 }
